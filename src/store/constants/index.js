@@ -1,0 +1,1 @@
+export const SET_DATES_RANGE = 'SET_DATES_RANGE';
