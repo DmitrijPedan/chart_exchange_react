@@ -11,3 +11,26 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+body {
+  background-color: #494b4d; 
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+  .container {
+    width: 90%;
+  }
+}
+
+@media (min-width: 300px) and (max-width: 600px) {
+  .container {
+    width: 95%;
+  }
+}
+
