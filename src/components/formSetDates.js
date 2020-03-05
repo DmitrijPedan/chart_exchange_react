@@ -1,14 +1,10 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { actionSetDatesRange } from '../../store/actions/setDatesRange';
-
+import { actionSetDatesRange } from '../store/actions/setDatesRange';
 
 function FormSetDates (props) {
-    
     const [dates, setDates] = useState([]);
-
-    const onClickHandler = () => props.foo(dates)
-      
+    const onClickHandler = () => props.actionSetDatesRangeHandler(dates)
     return (
         <div>
             <input type="number" onInput = { event => setDates(event.target.value)}/>
@@ -18,11 +14,7 @@ function FormSetDates (props) {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-    foo: (arg) => {
-        dispatch({
-            ...actionSetDatesRange,
-            payload: arg,
-    })}
+    actionSetDatesRangeHandler: (arg) => dispatch(actionSetDatesRange(arg))
 });
 
 export default connect(null, mapDispatchToProps)(FormSetDates);

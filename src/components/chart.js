@@ -1,10 +1,8 @@
 import React from 'react';
-import './chart.css'
+import '../styles/chart.css'
 import { connect } from 'react-redux';
-import { store } from '../..';
 
 function Chart (props) {
-    console.log('props in Chart', props.arrayOfCurrenciesProps);
     return (
         <div></div>
     )

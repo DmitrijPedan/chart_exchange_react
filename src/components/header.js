@@ -1,7 +1,7 @@
 import React from 'react';
+import { connect } from 'react-redux'
 import Clock from './clock'
-import './header.css'
-
+import '../styles/header.css'
 
 
 function Header (props) {
@@ -10,7 +10,7 @@ function Header (props) {
             <div className = "container">
                 <div className = "header-menu">
                     <div>
-                        <p className = "header-logo">Exchange<span>rates</span></p>
+                        <p className = "header-logo"><span>chart</span>Exchange</p>
                     </div>
                     <div className = "header-data">
                     <p>data uploaded: {props.loaded 
@@ -24,4 +24,8 @@ function Header (props) {
     )
 }
 
-export default Header;
+const mapStateToProps = (state) => ({
+    loaded: state.dataIsLoaded
+})
+
+export default connect(mapStateToProps)(Header);

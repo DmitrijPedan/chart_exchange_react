@@ -1,12 +1,11 @@
 import React from 'react';
-
-import './footer.css'
+import '../styles/footer.css'
 
 function Footer () {
     return (
         <footer>
             <div className = "container">
-                <p> &copy; Copyright, Exchange Rates {new Date().getFullYear()} <span>powered by React</span>  </p>
+                <p> &copy; Copyright, Chart Exchange {new Date().getFullYear()} <span>powered by React</span>  </p>
             </div>
         </footer>
     )

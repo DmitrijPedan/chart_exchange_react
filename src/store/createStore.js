@@ -3,7 +3,8 @@ import { SET_DATES_RANGE } from './constants';
 
 const dataState = {
     arrayOfDates: [],
-    arrayOfCurrencies: ['startData']
+    arrayOfCurrencies: ['startData'],
+    dataIsLoaded: false,
 };
 
 const reducer = (state = dataState, action) => {

@@ -1,7 +1,7 @@
 import React from 'react';
-import Chart from '../chart'
-import FormSetDates from '../formSetDates';
-import './main.css'
+import Chart from './chart'
+import FormSetDates from './formSetDates';
+import '../styles/main.css'
 
 function Main () {
     return (
