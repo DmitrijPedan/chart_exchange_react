@@ -1,10 +1,10 @@
 import { createStore, applyMiddleware, compose } from 'redux';
-import { SET_DATES_RANGE } from './constants';
+import { SET_DATES_RANGE, SET_EXCHANGE_DATA } from './constants';
 import thunk from 'redux-thunk';
 
 const dataState = {
     arrayOfDates: [],
-    arrayOfCurrencies: ['startData'],
+    arrayOfCurrencies: [],
     dataIsLoaded: false,
 };
 
@@ -14,6 +14,12 @@ const reducer = (state = dataState, action) => {
             return {
                 ...state, 
                 arrayOfDates: [...new Array(Number(action.payload))]
+            };
+        case SET_EXCHANGE_DATA: 
+            return {
+                ...state, 
+                arrayOfCurrencies: action.payload,
+                dataIsLoaded: true,
             };
         default:
             return {...state};
