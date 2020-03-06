@@ -14,7 +14,7 @@ function FormSetDates (props) {
     
     return (
         <div>
-            <input type="number" onInput = { event => setDates(event.target.value)}/>
+            <input type="number" onInput = {event => setDates(event.target.value)}/>
             <button onClick = {onClickHandler}>Set</button>
         </div>
     )
