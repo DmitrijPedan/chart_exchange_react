@@ -11,9 +11,7 @@ function Main (props) {
 
     const onClickHandler = (id) => {
         switchDisplay(id); 
-        if (id === 'table') {
-            props.fetchTodayHandler()
-        }
+        id === 'table' && props.fetchTodayHandler()
     }
      
     return (
