@@ -1,24 +1,19 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { actionSetTodayData } from '../store/actions/fetchToday';
+import {connect} from 'react-redux';
+import {actionSetTodayData} from '../store/actions/fetchToday';
+import {switchDisplay} from '../services/switchDisplay'
 import Chart from '../components/chart';
 import FormSetDates from '../components/formSetDates';
 import Table from '../components/table';
-
 import '../styles/main.css'
-
 
 function Main (props) {
 
-    const changeWiew = (id) => {
-        let elements = document.getElementsByClassName('toolbar-element');
-        [].map.call(elements, el => {
-            el.classList.contains(id) ? el.classList.remove('hidden') : el.classList.add('hidden');
-        })}
-
     const onClickHandler = (id) => {
-        changeWiew(id); 
-        props.actionSetExchangeHandler();
+        switchDisplay(id); 
+        if (id === 'table') {
+            props.fetchTodayHandler()
+        }
     }
      
     return (
@@ -40,7 +35,7 @@ function Main (props) {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-    actionSetExchangeHandler: () => dispatch(actionSetTodayData())
+    fetchTodayHandler: () => dispatch(actionSetTodayData()),
 });
 
 export default connect(null, mapDispatchToProps)(Main);

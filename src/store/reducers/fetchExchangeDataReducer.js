@@ -1,4 +1,4 @@
-import {SET_EXCHANGE_DATA, SET_TODAY_DATA} from '../constants';
+import {SET_EXCHANGE_DATA, SET_TODAY_DATA, SORT_TABLE} from '../constants';
 
 const dataState = {
     period: [],
@@ -19,6 +19,11 @@ const reducer = (state = dataState, action) => {
                 ...state, 
                 today: action.payload,
                 loaded: true,
+            };
+        case SORT_TABLE: 
+            return {
+                ...state, 
+                today: action.payload,
             };
         default:
             return {...state};
