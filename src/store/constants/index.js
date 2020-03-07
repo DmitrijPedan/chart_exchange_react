@@ -1,2 +1,3 @@
 export const SET_DATES_RANGE = 'SET_DATES_RANGE';
 export const SET_EXCHANGE_DATA = 'SET_EXCHANGE_DATA';
+export const SET_TODAY_DATA = 'SET_TODAY_DATA';

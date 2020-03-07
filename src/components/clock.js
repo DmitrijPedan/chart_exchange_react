@@ -19,7 +19,7 @@ const style = {
     fontSize: '15px',
     fontFamily: 'Arial, Helvetica, sans-serif',
     fontWeight: '300',
-    color: 'rgb(255, 136, 0)',
+    color: 'rgb(92, 167, 238)',
 }
 
 export default Clock;

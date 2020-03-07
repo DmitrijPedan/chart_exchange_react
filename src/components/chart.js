@@ -2,14 +2,16 @@ import React from 'react';
 import '../styles/chart.css'
 import { connect } from 'react-redux';
 
-function Chart (props) {
+function Chart ({data}) {
     return (
-        <div></div>
+        <div className = "toolbar-element line hidden">
+            <h1>Chart</h1>
+        </div>
     )
 }
 
 const mapStateToProps = (state) => ({
-    arrayOfCurrenciesProps: state.arrayOfCurrencies,
+    data: state.arrayOfCurrencies.data,
 })
 
 export default connect(mapStateToProps)(Chart);

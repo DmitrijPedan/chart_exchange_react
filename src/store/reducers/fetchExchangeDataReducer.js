@@ -1,7 +1,8 @@
-import {SET_EXCHANGE_DATA} from '../constants';
+import {SET_EXCHANGE_DATA, SET_TODAY_DATA} from '../constants';
 
 const dataState = {
-    data: [],
+    period: [],
+    today: [],
     loaded: false,
 };
 
@@ -10,7 +11,13 @@ const reducer = (state = dataState, action) => {
         case SET_EXCHANGE_DATA: 
             return {
                 ...state, 
-                data: action.payload,
+                period: action.payload,
+                loaded: true,
+            };
+        case SET_TODAY_DATA: 
+            return {
+                ...state, 
+                today: action.payload,
                 loaded: true,
             };
         default:

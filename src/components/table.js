@@ -1,30 +1,27 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import TableRow from './table_row';
-import './table.css'
+import '../styles/table.css'
 
-function Table (props) {
+function Table ({today}) {
     return (
-        <table>
+        <table  className = "toolbar-element table hidden">
             <thead>
                 <tr>
-                    <th></th>
-                    <th>
-                        <p className = "trans-min">Country<br/><span>click to sort</span></p>
-                    </th>
-                    <th>
-                        <p className = "trans-min">Currency<br/><span>click to sort</span></p>
-                    </th>
-                    <th>
-                        <p className = "trans-min">Rate<br/><span>click to sort</span></p>
-                    </th>
+                    <th><p className = "trans-min">Код<br/><span>click to sort</span></p></th>
+                    <th><p className = "trans-min">Валюта<br/><span>click to sort</span></p></th>
+                    <th><p className = "trans-min">Курс<br/><span>click to sort</span></p></th>
                 </tr>
             </thead>
             <tbody>
-                {props.exchangeRate.map((el, i) => <TableRow key = {i} row = {el}/>)}
+                {today.map((el, i) => <TableRow key = {i} row = {el}/>)}
             </tbody>
         </table>
     )
 }
 
-export default connect()(Table);
+const mapStateToProps = (state) => ({
+    today: state.arrayOfCurrencies.today,
+})
+
+export default connect(mapStateToProps)(Table);

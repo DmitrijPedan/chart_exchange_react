@@ -13,9 +13,8 @@ function Header (props) {
                         <p className = "header-logo"><span>chart</span>Exchange</p>
                     </div>
                     <div className = "header-data">
-                    <p>data uploaded: {props.loaded 
-                        ? <span className = "data-ok">ok</span> 
-                        : <span className = "data-false">server is not available</span> }</p>
+                    <p>{props.loaded ? <span className = "data-ok">data is loaded</span> 
+                        : <span className = "data-false">no data</span> }</p>
                         <Clock />
                     </div>
                 </div> 
@@ -25,7 +24,7 @@ function Header (props) {
 }
 
 const mapStateToProps = (state) => ({
-    loaded: state.dataIsLoaded
+    loaded: state.arrayOfCurrencies.loaded
 })
 
 export default connect(mapStateToProps)(Header);

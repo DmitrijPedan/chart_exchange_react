@@ -5,5 +5,5 @@ import arrayOfDates from './dateRangeReducer';
 
 export default combineReducers({ 
     arrayOfCurrencies,
-    arrayOfDates
+    arrayOfDates,
 });

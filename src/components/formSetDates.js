@@ -13,7 +13,7 @@ function FormSetDates (props) {
     }
     
     return (
-        <div>
+        <div className = "toolbar-element bar hidden">
             <input type="number" onInput = {event => setDates(event.target.value)}/>
             <button onClick = {onClickHandler}>Set</button>
         </div>
