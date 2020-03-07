@@ -1,0 +1,70 @@
+.toolbar {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #393b3d;
+}
+
+.toolbar svg{
+    font-size: 22px;
+}
+
+.toolbar p{
+    font-size: 14px;
+    margin: 5px;
+}
+
+.toolbar button {
+    padding: 10px;
+    width: 60px;
+    color: darkgrey;
+    background-color: #393b3d;
+    border: none;
+    outline: none;
+}
+
+.toolbar button:hover {
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+.toolbar button:focus {
+    color: rgb(255, 255, 255);
+    background-color: #414346;
+    border-left: 1px solid rgb(71, 95, 233);
+}
+
+
+.data-area {
+    width: 100%;
+    height: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    padding-left: 60px;
+}
+
+.data-example {
+    text-align: center;
+    background-color: darkgreen;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (min-width: 300px) and (max-width: 600px) {
+    .main-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+    .toolbar {
+        display: flex;
+        flex-direction: row;
+    }
+    .toolbar button:focus {
+        border-left: none;
+        border-bottom: 1px solid rgb(71, 95, 233);
+    }
+}

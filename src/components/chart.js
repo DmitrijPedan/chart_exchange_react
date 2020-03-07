@@ -1,6 +1,8 @@
 import React from 'react';
-import '../styles/chart.css'
 import {connect} from 'react-redux';
+import '../styles/chart.css'
+
+
 
 function Chart ({period}) {
     console.log('period', period);
@@ -11,8 +13,6 @@ function Chart ({period}) {
     })
     
     console.log('usd', usd);
-
-
 
     return (
         <div className = "toolbar-element line hidden">

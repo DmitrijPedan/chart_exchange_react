@@ -6,6 +6,7 @@ import Footer from './footer';
 import '../styles/app.css';
 
 function App() {
+    document.title = "Chart Exchange NBU"
     return (
         <div className="App">
             <Header />
