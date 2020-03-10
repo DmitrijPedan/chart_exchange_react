@@ -1,4 +1,4 @@
-import { URL_NBU_TODAY } from './urlConstants';
+import { URL_NBU_TODAY } from '../config/urlConstants';
 
 const fetchTodayExchange = async () => {
     try {

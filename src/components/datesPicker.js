@@ -1,11 +1,14 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
+import { connect } from 'react-redux';
+import { actionSetDatesRange } from '../store/actions/setDatesRangeAction';
+import { actionSetExchangeData } from '../store/actions/fetchPeriodAction';
 import DayPicker, { DateUtils } from 'react-day-picker';
-import {MONTHS, WEEKDAYS_LONG, WEEKDAYS_SHORT, DISABLED_DAYS} from '../config/datePickerLocale';
+import {MONTHS, WEEKDAYS_LONG, WEEKDAYS_SHORT, DISABLED_DAYS} from '../config/datePickerConfig';
 import "react-day-picker/lib/style.css";
-import '../styles/datePicker.css'
+import '../styles/datePicker.css';
 
 
-function DatesPicker  () {
+function DatesPicker (props) {
 
     const initState = {
         from: undefined,
@@ -14,17 +17,19 @@ function DatesPicker  () {
     
     const [state, setState] = useState(initState)
     const { from, to } = state;
-    
     const modifiers = { start: from, end: to };
-
-    console.log(state);
-   
+       
     const handleDayClick = (day) => {
         const range = DateUtils.addDayToRange(day, state);
         setState(range);
     }
 
     const handleResetClick = () => setState(initState);
+
+    const handleConfirmClick = () => {
+        props.actionSetDatesRangeHandler(state);
+        props.actionSetExchangeHandler()
+    }
 
     return (
         <div className="rangeDates">
@@ -48,10 +53,15 @@ function DatesPicker  () {
             />
             <div>
                 {from && to && (<button className="link" onClick={handleResetClick}>Сбросить</button>)}
-                {from && to && (<button className="link" onClick={handleResetClick}>Применить</button>)}
+                {from && to && (<button className="link" onClick={handleConfirmClick}>Применить</button>)}
             </div>
         </div>
     )
-}
+};
 
-export default DatesPicker;
+const mapDispatchToProps = (dispatch) => ({
+    actionSetDatesRangeHandler: (arg) => dispatch(actionSetDatesRange(arg)),
+    actionSetExchangeHandler: () => dispatch(actionSetExchangeData())
+});
+
+export default connect(null, mapDispatchToProps)(DatesPicker);
