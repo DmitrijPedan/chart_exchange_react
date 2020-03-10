@@ -1,6 +1,6 @@
 import React from 'react';
 import Toolbar from '../components/toolbar';
-import Chart from '../components/chart';
+import ChartComponent from '../components/chart';
 import FormSetDates from '../components/formSetDates';
 import Table from '../components/table';
 import '../styles/main.css'
@@ -10,11 +10,11 @@ function Main () {
         <main>
             <div className = "main-wrapper">
                 <Toolbar />
-            <div className = "data-area">
-                <Chart />
-                <FormSetDates />
-                <Table />
-            </div>
+                <div className = "data-area">
+                    <ChartComponent />
+                    <FormSetDates />
+                    <Table />
+                </div>
             </div>
         </main>
     )

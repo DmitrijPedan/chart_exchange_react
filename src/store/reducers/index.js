@@ -1,9 +1,12 @@
 import {combineReducers} from 'redux';
 
-import arrayOfCurrencies from './fetchExchangeDataReducer';
+import todayExchange from './fetchTodayReducer';
+import periodExchange from './fetchPeriodReducer';
 import arrayOfDates from './dateRangeReducer';
 
+
 export default combineReducers({ 
-    arrayOfCurrencies,
-    arrayOfDates,
+    todayExchange: todayExchange,
+    periodExchange: periodExchange,
+    arrayOfDates: arrayOfDates,
 });

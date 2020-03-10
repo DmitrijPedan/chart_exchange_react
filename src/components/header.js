@@ -10,7 +10,7 @@ function Header () {
             <div className = "container">
                 <div className = "header-menu">
                     <div>
-                        <p className = "header-logo"><span><FontAwesomeIcon icon= {faChartPie}/> chart</span>Exchange</p>
+                        <p className = "header-logo"><span><FontAwesomeIcon icon= {faChartPie}/> chart</span>Exchange rates</p>
                     </div>
                     <div className = "header-data">
                         <Clock />

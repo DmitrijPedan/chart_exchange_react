@@ -1,7 +1,7 @@
 import {SET_TODAY_DATA} from '../constants';
 import fetchTodayExchange from '../../services/fetchTodayExchange';
 
-const setTodayData = (data) => ({
+const setTodayData = (data = []) => ({
     type: SET_TODAY_DATA,
     payload: data,
 });

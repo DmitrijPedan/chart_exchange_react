@@ -1,11 +1,13 @@
-import {SET_DATES_RANGE} from '../constants';
+import {SET_TODAY_DATA, SORT_TABLE} from '../constants';
 
 const initState = [];
 
 const reducer = (state = initState, action) => {
     switch (action.type) {
-        case SET_DATES_RANGE: 
+        case SET_TODAY_DATA: 
             return state = action.payload;
+        case SORT_TABLE: 
+            return state = action.payload;;
         default:
             return state;
     }
