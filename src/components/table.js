@@ -13,7 +13,7 @@ function Table ({today, actionSortDataHandler}) {
     }
 
     return (
-        <div className = "toolbar-element table hidden">
+        <div className = "toolbar-element tableElement hidden">
             <table>
                 <thead>
                     <tr>

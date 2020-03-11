@@ -1,6 +1,6 @@
 import React from 'react';
 import Toolbar from '../components/toolbar';
-import ChartComponent from '../components/chart';
+import ChartComponent from './chartComponent';
 import Table from '../components/table';
 import '../styles/main.css'
 

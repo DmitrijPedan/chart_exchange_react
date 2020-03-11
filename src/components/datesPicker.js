@@ -1,14 +1,16 @@
-import React, { useState } from 'react';
-import { connect } from 'react-redux';
-import { actionSetDatesRange } from '../store/actions/setDatesRangeAction';
-import { actionSetExchangeData } from '../store/actions/fetchPeriodAction';
-import DayPicker, { DateUtils } from 'react-day-picker';
+import React, {useState} from 'react';
+import {connect} from 'react-redux';
+import {actionSetDatesRange} from '../store/actions/setDatesRangeAction';
+import {actionSetExchangeData} from '../store/actions/fetchPeriodAction';
+import {actionSetCurrencies} from '../store/actions/setCurrenciesAction';
+import DayPicker, {DateUtils} from 'react-day-picker';
 import {MONTHS, WEEKDAYS_LONG, WEEKDAYS_SHORT, DISABLED_DAYS} from '../config/datePickerConfig';
 import "react-day-picker/lib/style.css";
 import '../styles/datePicker.css';
 
-
 function DatesPicker (props) {
+
+    const currencies = ['USD', 'EUR'];
 
     const initState = {
         from: undefined,
@@ -28,11 +30,12 @@ function DatesPicker (props) {
 
     const handleConfirmClick = () => {
         props.actionSetDatesRangeHandler(state);
+        props.actionSetCurrenciesHandler(currencies);
         props.actionSetExchangeHandler()
     }
 
     return (
-        <div className="rangeDates">
+        <div className="rangeDatesDays">
             <p>
                 {!from && !to && `Начальная дата`}
                 {from && !to && `Конечная дата`}
@@ -51,7 +54,7 @@ function DatesPicker (props) {
                 firstDayOfWeek={0}
                 disabledDays={DISABLED_DAYS}
             />
-            <div>
+            <div className="rangeDatesButtons">
                 {from && to && (<button className="link" onClick={handleResetClick}>Сбросить</button>)}
                 {from && to && (<button className="link" onClick={handleConfirmClick}>Применить</button>)}
             </div>
@@ -60,7 +63,8 @@ function DatesPicker (props) {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-    actionSetDatesRangeHandler: (arg) => dispatch(actionSetDatesRange(arg)),
+    actionSetDatesRangeHandler: (dates) => dispatch(actionSetDatesRange(dates)),
+    actionSetCurrenciesHandler: (codes) => dispatch(actionSetCurrencies(codes)),
     actionSetExchangeHandler: () => dispatch(actionSetExchangeData())
 });
 

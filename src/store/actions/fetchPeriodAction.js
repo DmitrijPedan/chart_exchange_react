@@ -10,6 +10,6 @@ const setExchangeData = (data) => ({
 export const actionSetExchangeData = () => async dispatch => {
     (async () => {
         const data = await fetchExchangeRangeDates(store.getState().arrayOfDates);
-        dispatch(setExchangeData(data.map(el => el.find(e => e.cc === 'USD'))))
+        dispatch(setExchangeData(data))
     })()
 };
