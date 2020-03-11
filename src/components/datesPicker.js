@@ -65,7 +65,9 @@ function DatesPicker (props) {
 
 const mapDispatchToProps = (dispatch) => ({
     actionSetDatesRangeHandler: (dates) => dispatch(actionSetDatesRange(dates)),
-    actionSetCurrenciesHandler: (codes) => dispatch(actionSetCurrencies(codes  = ["USD"])),
+    actionSetCurrenciesHandler: (codes) => {
+        codes.length > 0 ? dispatch(actionSetCurrencies(codes)) : dispatch(actionSetCurrencies(['USD']))
+    },
     actionSetExchangeHandler: () => dispatch(actionSetExchangeData())
 });
 
