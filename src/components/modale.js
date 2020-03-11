@@ -1,28 +1,22 @@
 import React  from 'react';
-import Button from '../buttons/confirm'
-import CloseButton from '../buttons/close'
+import CloseButton from './buttons/close';
+import DatesPicker from './datesPicker';
 
-import './modale.css';
+import '../styles/modale.css';
 
 function Modale (props) {
-
-    const [modalStatus, setModalStatus] = useState(false);
-    const switchModale = () => setModalStatus(!modalStatus)
 
     return (
         <div className = "modal-overlay">
             <div className = "modal-window">
                 <div className = "modal-header">
-                        <p>{props.row.name}</p>
+                        <p>Параметры графика</p>
                         <div className = "close-btn">
-                            <CloseButton  action = {props.switchModale} />
+                            <CloseButton  action = {props.action} />
                         </div>
                 </div>
                 <div className = "modal-body">
-                    
-                </div>
-                <div className = "modal-footer">
-                    <Button action = {props.switchModale} inside = {"Ok"}/>
+                    <DatesPicker />
                 </div>
             </div>
         </div>
