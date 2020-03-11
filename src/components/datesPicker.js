@@ -1,16 +1,16 @@
 import React, {useState} from 'react';
 import {connect} from 'react-redux';
 import {actionSetDatesRange} from '../store/actions/setDatesRangeAction';
-import {actionSetExchangeData} from '../store/actions/fetchPeriodAction';
 import {actionSetCurrencies} from '../store/actions/setCurrenciesAction';
+import {actionSetExchangeData} from '../store/actions/fetchPeriodAction';
 import DayPicker, {DateUtils} from 'react-day-picker';
 import {MONTHS, WEEKDAYS_LONG, WEEKDAYS_SHORT, DISABLED_DAYS} from '../config/datePickerConfig';
 import "react-day-picker/lib/style.css";
 import '../styles/datePicker.css';
 
 function DatesPicker (props) {
-
-    const currencies = ['USD', 'EUR'];
+    
+    const checkboxesArray = [...document.getElementsByClassName('codecheck')];
 
     const initState = {
         from: undefined,
@@ -29,9 +29,10 @@ function DatesPicker (props) {
     const handleResetClick = () => setState(initState);
 
     const handleConfirmClick = () => {
+        props.actionSetCurrenciesHandler(checkboxesArray.map(el => el.checked && el.value).filter(el => el));
         props.actionSetDatesRangeHandler(state);
-        props.actionSetCurrenciesHandler(currencies);
-        props.actionSetExchangeHandler()
+        props.actionSetExchangeHandler();
+        props.action();
     }
 
     return (

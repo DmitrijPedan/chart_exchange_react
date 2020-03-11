@@ -1,7 +1,7 @@
 import React  from 'react';
 import CloseButton from './buttons/close';
+import CodesCheckbox from './codesCheckbox';
 import DatesPicker from './datesPicker';
-
 import '../styles/modale.css';
 
 function Modale (props) {
@@ -10,13 +10,14 @@ function Modale (props) {
         <div className = "modal-overlay">
             <div className = "modal-window">
                 <div className = "modal-header">
-                        <p>Параметры графика</p>
-                        <div className = "close-btn">
-                            <CloseButton  action = {props.action} />
-                        </div>
+                    <p>Выберите валюту и период</p>
+                    <div className = "close-btn">
+                        <CloseButton  action = {props.action} />
+                    </div>
                 </div>
                 <div className = "modal-body">
-                    <DatesPicker />
+                    <CodesCheckbox/>
+                    <DatesPicker action = {props.action}/>
                 </div>
             </div>
         </div>

@@ -1,6 +1,6 @@
 import {SET_CURRENCIES} from '../constants';
 
-const initState = [];
+const initState = ['USD'];
 
 const reducer = (state = initState, action) => {
     switch (action.type) {

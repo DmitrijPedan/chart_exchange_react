@@ -1,0 +1,8 @@
+.codesCheckboxes {
+text-align: left;
+color: rgb(189, 189, 177);
+}
+
+.codesCheckboxes > p{
+    color: rgb(60, 166, 236);
+}

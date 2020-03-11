@@ -48,13 +48,16 @@
 .modal-header p {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 24px;
+    font-size: 18px;
     font-weight: 300;
-    color: rgb(255, 255, 255);
+    color: rgb(71, 178, 240);
     text-transform: uppercase;
 }
 
 .modal-body {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     padding: 15px 20px;
     text-align: left;
     border-top: 1px solid gray; 

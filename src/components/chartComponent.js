@@ -19,9 +19,7 @@ function ChartComponent (props) {
 
     return (
         <div className = "toolbar-element chartElement hidden">
-            
-            
-            <canvas id="newChart" width="200" height="150"></canvas>
+            <canvas className = "chartLine" id="newChart" width="200" height="150"></canvas>
         </div>
     )
 }
