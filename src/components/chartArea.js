@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import ButtonDefault from './buttons/default';
 import Modale from './modale';
 import ChartComponent from './chartComponent';
+import '../styles/chartArea.css'
 
 function ChartArea () {
 

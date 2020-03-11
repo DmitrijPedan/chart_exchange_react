@@ -1,5 +1,11 @@
 .chartLine {
     background-color: rgb(201, 201, 201);
-    width: 95% !important;
-    height: 80% !important;
+    width: 100% !important;
+    height: 80vh !important;
+}
+
+.chartElement {
+    width: 98%;
+    height: 80%;
+    margin: auto;
 }
