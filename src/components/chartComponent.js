@@ -1,6 +1,5 @@
 import React, {useEffect} from 'react';
 import {connect} from 'react-redux';
-import DatesPicker from './datesPicker'
 import {Chart} from 'chart.js';
 import {chartOptions} from '../config/chartConfig';
 import {getChartData} from '../services/getChartData';
@@ -20,7 +19,8 @@ function ChartComponent (props) {
 
     return (
         <div className = "toolbar-element chartElement hidden">
-            <DatesPicker />
+            
+            
             <canvas id="newChart" width="200" height="150"></canvas>
         </div>
     )

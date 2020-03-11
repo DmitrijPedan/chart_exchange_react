@@ -1,0 +1,14 @@
+.defaultBtn {
+    border: none;
+    margin: 5px;
+    background-color: #393b3d;
+    color: darkgrey;
+    padding: 5px 15px;
+}
+
+.defaultBtn:hover {
+    cursor: pointer;
+    border: none;
+    background-color: #393b3d;
+    color: rgb(248, 233, 233);
+}

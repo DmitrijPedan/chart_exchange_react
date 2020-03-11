@@ -6,6 +6,9 @@ import './modale.css';
 
 function Modale (props) {
 
+    const [modalStatus, setModalStatus] = useState(false);
+    const switchModale = () => setModalStatus(!modalStatus)
+
     return (
         <div className = "modal-overlay">
             <div className = "modal-window">

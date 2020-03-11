@@ -1,7 +1,7 @@
 import React from 'react';
-import Toolbar from '../components/toolbar';
-import ChartComponent from './chartComponent';
-import Table from '../components/table';
+import Toolbar from './toolbar';
+import ChartArea from './chartArea';
+import Table from './table';
 import '../styles/main.css'
 
 function Main () {
@@ -10,7 +10,7 @@ function Main () {
             <div className = "main-wrapper">
                 <Toolbar />
                 <div className = "data-area">
-                    <ChartComponent />
+                    <ChartArea />
                     <Table />
                 </div>
             </div>
