@@ -7,7 +7,7 @@ const setExchangeData = (data) => ({
     payload: data,
 });
 
-export const actionSetExchangeData = () => async dispatch => {
+export const actionSetExchangeData = () => dispatch => {
     (async () => {
         const data = await fetchExchangeRangeDates(store.getState().arrayOfDates);
         dispatch(setExchangeData(data))

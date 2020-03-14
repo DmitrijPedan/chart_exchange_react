@@ -6,7 +6,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faChartLine, faTable} from '@fortawesome/free-solid-svg-icons';
 import '../styles/toolbar.css';
 
-function Toolbar (props) {
+const Toolbar = (props) => {
 
     const onClickHandler = (targ) => {
         const id = Boolean(targ.id) ? targ.id : targ.parentNode.id

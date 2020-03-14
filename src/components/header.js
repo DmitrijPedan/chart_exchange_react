@@ -4,7 +4,7 @@ import { faChartPie } from '@fortawesome/free-solid-svg-icons';
 import Clock from './clock'
 import '../styles/header.css'
 
-function Header () {
+const Header = () => {
     return (
         <header>
             <div className = "container">

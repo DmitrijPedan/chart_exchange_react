@@ -5,11 +5,11 @@ const initState = [];
 const reducer = (state = initState, action) => {
     switch (action.type) {
         case SET_TODAY_DATA: 
-            return state = action.payload;
+            return state = [...action.payload];
         case SORT_TABLE: 
-            return state = action.payload;;
+            return [...action.payload];
         default:
-            return state;
+            return [...state];
     }
 };
 

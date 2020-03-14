@@ -4,7 +4,7 @@ import CodesCheckbox from './codesCheckbox';
 import DatesPicker from './datesPicker';
 import '../styles/modale.css';
 
-function Modale (props) {
+const Modale = ({action}) => {
 
     return (
         <div className = "modal-overlay">
@@ -12,12 +12,12 @@ function Modale (props) {
                 <div className = "modal-header">
                     <p>Выберите валюту и период</p>
                     <div className = "close-btn">
-                        <CloseButton  action = {props.action} />
+                        <CloseButton  action = {action} />
                     </div>
                 </div>
                 <div className = "modal-body">
                     <CodesCheckbox/>
-                    <DatesPicker action = {props.action}/>
+                    <DatesPicker action = {action}/>
                 </div>
             </div>
         </div>

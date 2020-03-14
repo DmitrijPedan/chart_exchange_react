@@ -8,7 +8,7 @@
 }
 
 .rangeDatesButtons button {
-    border: none;
+    border: 1px solid darkgrey;
     margin: 5px;
     background-color: #393b3d;
     color: darkgrey;
@@ -17,7 +17,12 @@
 
 .rangeDatesButtons button:hover {
     cursor: pointer;
-    border: none;
-    background-color: #393b3d;
     color: rgb(248, 233, 233);
+}
+
+.rangeDatesButtons button:disabled {
+    border: 1px solid #555657;
+    cursor: auto;
+    background-color: #555657;
+    color: rgb(128, 126, 126);
 }

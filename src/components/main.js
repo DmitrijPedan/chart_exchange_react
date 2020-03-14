@@ -4,7 +4,7 @@ import ChartArea from './chartArea';
 import Table from './table';
 import '../styles/main.css'
 
-function Main () {
+const Main = () => {
     return (
         <main>
             <div className = "main-wrapper">

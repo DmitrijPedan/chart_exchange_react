@@ -9,8 +9,12 @@ export const getDatasets = (arr) => {
         return {
             label: code,
             data: rates.map(el => el.rate),
+            backgroundColor: ['rgba(255, 255, 255, 0)'],
             borderColor: [borderColors[Math.floor(Math.random() * borderColors.length)]],
-            borderWidth: 1
+            borderWidth: 1,
+            pointBackgroundColor: 'dodgerblue',
+            pointRadius: 1,
+            // lineTension: 0
         }    
     }) 
 }

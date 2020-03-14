@@ -41,3 +41,9 @@ header {
 .data-false {
     color: rgb(241, 0, 0);
 }
+
+@media (min-width: 300px) and (max-width: 600px) {
+    .header-logo  {
+        display: none;
+    }
+}

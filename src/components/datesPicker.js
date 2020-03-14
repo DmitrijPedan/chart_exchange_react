@@ -8,9 +8,10 @@ import {MONTHS, WEEKDAYS_LONG, WEEKDAYS_SHORT, DISABLED_DAYS} from '../config/da
 import "react-day-picker/lib/style.css";
 import '../styles/datePicker.css';
 
-function DatesPicker (props) {
+const DatesPicker = (props) => {
     
     const checkboxesArray = [...document.getElementsByClassName('codecheck')];
+    console.log(checkboxesArray)
 
     const initState = {
         from: undefined,
@@ -25,8 +26,6 @@ function DatesPicker (props) {
         const range = DateUtils.addDayToRange(day, state);
         setState(range);
     }
-
-    const handleResetClick = () => setState(initState);
 
     const handleConfirmClick = () => {
         props.actionSetCurrenciesHandler(checkboxesArray.map(el => el.checked && el.value).filter(el => el));
@@ -56,8 +55,16 @@ function DatesPicker (props) {
                 disabledDays={DISABLED_DAYS}
             />
             <div className="rangeDatesButtons">
-                {from && to && (<button className="link" onClick={handleResetClick}>Сбросить</button>)}
-                {from && to && (<button className="link" onClick={handleConfirmClick}>Применить</button>)}
+                <button className="link" 
+                    onClick={() => setState(initState)}
+                    disabled = {from && to ? "" : "disabled"} >
+                    Сбросить
+                </button>
+               <button className="link" 
+                    onClick={handleConfirmClick}
+                    disabled = {from && to ? "" : "disabled"} >
+                   Применить
+               </button>
             </div>
         </div>
     )
@@ -65,9 +72,7 @@ function DatesPicker (props) {
 
 const mapDispatchToProps = (dispatch) => ({
     actionSetDatesRangeHandler: (dates) => dispatch(actionSetDatesRange(dates)),
-    actionSetCurrenciesHandler: (codes) => {
-        codes.length > 0 ? dispatch(actionSetCurrencies(codes)) : dispatch(actionSetCurrencies(['USD']))
-    },
+    actionSetCurrenciesHandler: (codes) => dispatch(actionSetCurrencies(codes)),
     actionSetExchangeHandler: () => dispatch(actionSetExchangeData())
 });
 

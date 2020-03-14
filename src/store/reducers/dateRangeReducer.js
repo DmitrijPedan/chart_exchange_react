@@ -5,9 +5,9 @@ const initState = [];
 const reducer = (state = initState, action) => {
     switch (action.type) {
         case SET_DATES_RANGE: 
-            return state = action.payload;
+            return [...action.payload];
         default:
-            return state;
+            return [...state];
     }
 };
 

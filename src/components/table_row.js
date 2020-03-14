@@ -1,13 +1,21 @@
 import React from 'react';
 
-function TableRow (props) {
+const TableRow = ({row}) => {
     return (
         <tr>
-            <td className = "td-code"> <p>{props.row.cc} </p></td>
-            <td className = "td-currency"><p>{props.row.txt}</p></td>
-            <td className = "td-rate"><p> <span> { Math.ceil((props.row.rate*100)) / 100}</span>UAH</p></td>
+            <td className = "td-currency"><p>{row.txt}</p></td>
+            <td className = "td-code"> <p>{row.cc} </p></td>
+            <td className = "td-rate"><p>{ row.rate.toFixed(3) }</p></td>
+            <td> 
+                {row.rate > row.prewrate && <span className = "rate-up">&uarr;</span>}
+                {row.rate < row.prewrate && <span className = "rate-down">&darr;</span>}
+                {row.rate === row.prewrate && <span className = "rate-flat">&harr;</span>}
+            </td>
+            <td className = "td-rate">
+                <p>{(row.rate - row.prewrate).toFixed(2)}</p>
+            </td>
         </tr>
     )
 }
 
-export default TableRow;
+export default TableRow; 

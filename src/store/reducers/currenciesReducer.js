@@ -5,9 +5,9 @@ const initState = ['USD'];
 const reducer = (state = initState, action) => {
     switch (action.type) {
         case SET_CURRENCIES:
-            return state = action.payload;
+            return [...action.payload];
         default:
-            return state;
+            return [...state];
     }
 };
 

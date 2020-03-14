@@ -6,13 +6,13 @@ import {getChartData} from '../services/getChartData';
 import '../styles/chart.css';
 
 
-function ChartComponent (props) {
+const ChartComponent = ({period}) => {
     
     useEffect(()=> {
         const ctx = document.getElementById('newChart').getContext('2d');
         new Chart(ctx, {
             type: 'line',
-            data: getChartData(props.period),
+            data: getChartData(period),
             options: chartOptions,
         });
     })

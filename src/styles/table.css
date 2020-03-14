@@ -23,7 +23,7 @@ thead th span {
 }
 
 tbody tr {
-    text-align: center;
+    /* text-align: center; */
     border-top: 1px solid rgb(122, 121, 121);
 }
 
@@ -38,11 +38,24 @@ tbody tr p {
     font-size: 12px;
 }
 
-.td-rate span{
-    padding-right: 5px;
-    color: rgb(51, 255, 0);
+.td-rate p{
+    color: rgb(193, 241, 253);
 }
 
+.rate-up {
+    margin-left: 15px;
+    color: lime;
+}
+
+.rate-down {
+    margin-left: 15px;
+    color: red;
+}
+
+.rate-flat {
+    margin-left: 15px;
+    color: yellow;
+}
 
 
 @media (min-width: 300px) and (max-width: 600px) {
