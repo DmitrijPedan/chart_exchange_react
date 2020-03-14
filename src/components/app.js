@@ -8,12 +8,13 @@ import Footer from './footer';
 
 
 const App = ({actionSetRestCountriesHandler}) => {
+    
     document.title = "Exchange rates NBU";
 
     useEffect(() => {
         const fetchData = async () => actionSetRestCountriesHandler(await fetchRestCountries());
         fetchData();
-    }, [])
+    })
     
     return (
         <div className="App">

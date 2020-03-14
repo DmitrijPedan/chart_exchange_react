@@ -5,7 +5,7 @@ const Footer = () => {
     return (
         <footer>
             <div className = "container">
-                <p> &copy; Copyright, Chart Exchange {new Date().getFullYear()} <span>powered by React</span>  </p>
+                <p> &copy; NBU exchange rates {new Date().getFullYear()} <span>powered by React</span>  </p>
             </div>
         </footer>
     )

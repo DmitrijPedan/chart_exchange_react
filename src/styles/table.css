@@ -5,14 +5,14 @@ table {
 }
 
 thead th p {
-    color: rgb(209, 194, 194);
+    color: white;
     font-size: 18px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 300;
     margin: 10px 0px;
 }
 
-thead th :hover {
+.actionable:hover {
     cursor: pointer;
     color: rgb(52, 159, 247);
     transform: scale(1.1);
@@ -22,41 +22,62 @@ thead th span {
     font-size: 10px;
 }
 
+
+/* tbody */
+
 tbody tr {
-    /* text-align: center; */
     border-top: 1px solid rgb(122, 121, 121);
+}
+
+.td-countries {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    color: white;
+}
+
+.td-countries div{
+    margin: 3px;
+    width: 60px;
+    height: 20px;
+    border-radius: 5px;
+    background-color: rgb(126, 150, 167);
+
+}
+
+.td-countries div:hover{
+    cursor: pointer;
+    background-color: rgb(92, 167, 238);
 }
 
 tbody tr p {
     margin: 3px;
     font-weight: 100;
-    color: rgb(209, 194, 194);
+    color: rgb(255, 255, 255);
 }
 
-.td-currency span {
-    color: rgb(189, 177, 177);
-    font-size: 12px;
+.td-rate p {
+    color: orange;
 }
 
-.td-rate p{
-    color: rgb(193, 241, 253);
+.td-difference span {
+    font-weight: 300;
 }
 
 .rate-up {
-    margin-left: 15px;
-    color: lime;
+    color: rgb(102, 223, 102);
 }
 
 .rate-down {
-    margin-left: 15px;
-    color: red;
+    color: rgb(252, 73, 73);
 }
 
 .rate-flat {
-    margin-left: 15px;
-    color: yellow;
+    color: rgb(231, 231, 78);
 }
 
+/* media */
 
 @media (min-width: 300px) and (max-width: 600px) {
     .flag-img {

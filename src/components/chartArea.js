@@ -10,7 +10,7 @@ const ChartArea = () => {
     return (
         <div className = "toolbar-element chartElement hidden">
             <ButtonDefault action = {() => setModalStatus(!modalStatus)} inner = {'Исходные данные'}/>
-            {modalStatus && <Modale action = {() => setModalStatus(!modalStatus)}/> }
+            {modalStatus && <Modale  action = {() => setModalStatus(!modalStatus)} /> }
             <ChartComponent />
         </div>
     )
