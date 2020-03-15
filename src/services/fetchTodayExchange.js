@@ -7,7 +7,7 @@ const fetchTodayExchange = async () => {
     try {
         const todayResponse = await fetch(URL_NBU_DATES + moment().format('YYYYMMDD'));
         const todayData = await todayResponse.json();
-        const yesterdayResponse = await fetch(URL_NBU_DATES + moment().subtract(5, 'days').format('YYYYMMDD'));
+        const yesterdayResponse = await fetch(URL_NBU_DATES + moment().subtract(3, 'days').format('YYYYMMDD'));
         const yesterdayData = await yesterdayResponse.json();
         return todayData.map(el => el = {...el, 
             prewrate: yesterdayData.find(e => e.cc === el.cc).rate,
