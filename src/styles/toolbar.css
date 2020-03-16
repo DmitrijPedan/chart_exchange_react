@@ -36,8 +36,8 @@
 
 @media (min-width: 300px) and (max-width: 600px) {
     .toolbar {
-        position: relative;
-        width: 100%;
+        position: inherit;
+        width: 110%;
         height: 100%;
         display: flex;
         justify-content: center;
