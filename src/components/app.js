@@ -3,14 +3,14 @@ import {connect} from 'react-redux';
 import fetchRestCountries from '../services/fetchRestCountries';
 import {actionSetRestCountries} from '../store/actions/fetchRestCountriesAction';
 import {actionSetTodayData} from '../store/actions/fetchTodayAction';
-import {actionSetWSConnection} from '../store/actions/setWSConnectionAction';
-import createConnectionWS from '../services/fetchStocksOnWS';
+import {actionSetStocksData} from '../store/actions/setStocksDataAction';
+import { URL_WS_STOCKS } from '../config/urlConstants';
 import Header from './header';
 import Main from './main';
 import Footer from './footer';
 
 
-const App = ({setRestCountriesHandler, fetchTodayHandler, setWSConnectionHandler}) => {
+const App = ({setRestCountriesHandler, fetchTodayHandler, setStocksHandler}) => {
     
     document.title = "Exchange rates NBU";
 
@@ -18,7 +18,8 @@ const App = ({setRestCountriesHandler, fetchTodayHandler, setWSConnectionHandler
         const fetchData = async () => setRestCountriesHandler(await fetchRestCountries());
         fetchData();
         fetchTodayHandler();
-        setWSConnectionHandler(createConnectionWS());
+        const ws = new WebSocket(URL_WS_STOCKS);
+        ws.onmessage = event => setStocksHandler(JSON.parse(event.data));
     })
     
     return (
@@ -33,7 +34,7 @@ const App = ({setRestCountriesHandler, fetchTodayHandler, setWSConnectionHandler
 const mapDispatchToProps = () => dispatch => ({
     setRestCountriesHandler: (countries) => dispatch(actionSetRestCountries(countries)),
     fetchTodayHandler: () => dispatch(actionSetTodayData()),
-    setWSConnectionHandler: (ws) => dispatch(actionSetWSConnection(ws))
+    setStocksHandler: (ws) => dispatch(actionSetStocksData(ws))
 })
 
 export default connect(null, mapDispatchToProps)(App);
