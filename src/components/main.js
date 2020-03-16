@@ -1,7 +1,7 @@
 import React from 'react';
 import Toolbar from './toolbar';
 import ChartArea from './chartArea';
-import Table from './table';
+import TableArea from './tableArea';
 import '../styles/main.css'
 
 const Main = () => {
@@ -11,7 +11,7 @@ const Main = () => {
                 <Toolbar />
                 <div className = "data-area">
                     <ChartArea />
-                    <Table />
+                    <TableArea />
                 </div>
             </div>
         </main>

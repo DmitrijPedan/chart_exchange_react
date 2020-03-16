@@ -5,6 +5,7 @@ import periodExchange from './fetchPeriodReducer';
 import arrayOfDates from './dateRangeReducer';
 import arrayOfCurrencies from './currenciesReducer';
 import arrayOfRestCountries from './restCountriesReducer';
+import modalCountriesInfo from './modalCountriesInfoReducer';
 
 export default combineReducers({ 
     todayExchange: todayExchange,
@@ -12,4 +13,5 @@ export default combineReducers({
     arrayOfDates: arrayOfDates,
     arrayOfCurrencies: arrayOfCurrencies,
     arrayOfRestCountries: arrayOfRestCountries,
+    modalCountriesInfo: modalCountriesInfo,
 });

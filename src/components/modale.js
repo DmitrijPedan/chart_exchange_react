@@ -5,7 +5,7 @@ import DatesPicker from './datesPicker';
 import '../styles/modale.css';
 
 const Modale = ({action}) => {
-
+    
     return (
         <div className = "modal-overlay">
             <div className = "modal-window">

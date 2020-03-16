@@ -11,7 +11,6 @@ import '../styles/datePicker.css';
 const DatesPicker = (props) => {
     
     const checkboxesArray = [...document.getElementsByClassName('codecheck')];
-    console.log(checkboxesArray)
 
     const initState = {
         from: undefined,

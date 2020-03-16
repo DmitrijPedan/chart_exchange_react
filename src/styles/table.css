@@ -49,6 +49,7 @@ tbody tr {
 .td-countries div:hover{
     cursor: pointer;
     background-color: rgb(92, 167, 238);
+    transform: scale(1.1);
 }
 
 tbody tr p {
