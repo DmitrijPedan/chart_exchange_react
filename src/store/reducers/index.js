@@ -6,6 +6,7 @@ import arrayOfDates from './dateRangeReducer';
 import arrayOfCurrencies from './currenciesReducer';
 import arrayOfRestCountries from './restCountriesReducer';
 import modalCountriesInfo from './modalCountriesInfoReducer';
+import wsConnection from './setWSConnectionReducer';
 
 export default combineReducers({ 
     todayExchange: todayExchange,
@@ -14,4 +15,5 @@ export default combineReducers({
     arrayOfCurrencies: arrayOfCurrencies,
     arrayOfRestCountries: arrayOfRestCountries,
     modalCountriesInfo: modalCountriesInfo,
+    wsConnection: wsConnection,
 });

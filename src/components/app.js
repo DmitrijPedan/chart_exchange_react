@@ -2,18 +2,23 @@ import React, { useEffect } from 'react';
 import {connect} from 'react-redux';
 import fetchRestCountries from '../services/fetchRestCountries';
 import {actionSetRestCountries} from '../store/actions/fetchRestCountriesAction';
+import {actionSetTodayData} from '../store/actions/fetchTodayAction';
+import {actionSetWSConnection} from '../store/actions/setWSConnectionAction';
+import createConnectionWS from '../services/fetchStocksOnWS';
 import Header from './header';
 import Main from './main';
 import Footer from './footer';
 
 
-const App = ({actionSetRestCountriesHandler}) => {
+const App = ({setRestCountriesHandler, fetchTodayHandler, setWSConnectionHandler}) => {
     
     document.title = "Exchange rates NBU";
 
     useEffect(() => {
-        const fetchData = async () => actionSetRestCountriesHandler(await fetchRestCountries());
+        const fetchData = async () => setRestCountriesHandler(await fetchRestCountries());
         fetchData();
+        fetchTodayHandler();
+        setWSConnectionHandler(createConnectionWS());
     })
     
     return (
@@ -26,7 +31,9 @@ const App = ({actionSetRestCountriesHandler}) => {
 }
 
 const mapDispatchToProps = () => dispatch => ({
-    actionSetRestCountriesHandler: (countries) => dispatch(actionSetRestCountries(countries)),
+    setRestCountriesHandler: (countries) => dispatch(actionSetRestCountries(countries)),
+    fetchTodayHandler: () => dispatch(actionSetTodayData()),
+    setWSConnectionHandler: (ws) => dispatch(actionSetWSConnection(ws))
 })
 
 export default connect(null, mapDispatchToProps)(App);
