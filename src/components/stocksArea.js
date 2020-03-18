@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 
 const StocksArea = ({stocks}) => {
     
-    console.log(stocks);
+    // console.log(stocks);
 
     return (
         <div className = "toolbar-element stockElement hidden">

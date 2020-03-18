@@ -10,16 +10,16 @@ import Main from './main';
 import Footer from './footer';
 
 
-const App = ({setRestCountriesHandler, fetchTodayHandler, setStocksHandler}) => {
+const App = ({fetchCountriesData, fetchTodayData, setStocksData}) => {
     
     document.title = "Exchange rates NBU";
 
     useEffect(() => {
-        const fetchData = async () => setRestCountriesHandler(await fetchRestCountries());
-        fetchData();
-        fetchTodayHandler();
+        const fetchCountries = async () => fetchCountriesData(await fetchRestCountries());
+        fetchCountries();
+        fetchTodayData();
         const ws = new WebSocket(URL_WS_STOCKS);
-        ws.onmessage = event => setStocksHandler(JSON.parse(event.data));
+        ws.onmessage = event => setStocksData(JSON.parse(event.data));
     })
     
     return (
@@ -32,9 +32,9 @@ const App = ({setRestCountriesHandler, fetchTodayHandler, setStocksHandler}) => 
 }
 
 const mapDispatchToProps = () => dispatch => ({
-    setRestCountriesHandler: (countries) => dispatch(actionSetRestCountries(countries)),
-    fetchTodayHandler: () => dispatch(actionSetTodayData()),
-    setStocksHandler: (ws) => dispatch(actionSetStocksData(ws))
+    fetchCountriesData: (countries) => dispatch(actionSetRestCountries(countries)),
+    fetchTodayData: () => dispatch(actionSetTodayData()),
+    setStocksData: (ws) => dispatch(actionSetStocksData(ws))
 })
 
 export default connect(null, mapDispatchToProps)(App);
