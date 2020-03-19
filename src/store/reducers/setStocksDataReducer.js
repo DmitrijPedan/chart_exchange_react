@@ -1,13 +1,13 @@
 import {SET_STOCKS_DATA} from '../constants';
 
-const initState = {};
+const initState = null;
 
 const reducer = (state = initState, {type, payload}) => {
     switch (type) {
         case SET_STOCKS_DATA:
-            return {...payload}
+            return payload;
         default:
-            return {...state};
+            return state;
     }   
 }
 

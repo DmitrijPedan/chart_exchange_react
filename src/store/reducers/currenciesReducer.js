@@ -2,10 +2,10 @@ import {SET_CURRENCIES} from '../constants';
 
 const initState = ['USD'];
 
-const reducer = (state = initState, action) => {
-    switch (action.type) {
+const reducer = (state = initState, {type, payload}) => {
+    switch (type) {
         case SET_CURRENCIES:
-            return [...action.payload];
+            return [...payload];
         default:
             return [...state];
     }

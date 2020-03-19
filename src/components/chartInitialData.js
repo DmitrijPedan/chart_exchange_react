@@ -4,7 +4,7 @@ import CodesCheckbox from './codesCheckbox';
 import DatesPicker from './datesPicker';
 import '../styles/modale.css';
 
-const Modale = ({action}) => {
+const ChartInitialData = ({action}) => {
     
     return (
         <div className = "modal-overlay">
@@ -24,4 +24,4 @@ const Modale = ({action}) => {
     )
 }
 
-export default Modale;
+export default ChartInitialData;

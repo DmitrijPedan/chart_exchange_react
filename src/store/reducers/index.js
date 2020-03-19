@@ -1,19 +1,21 @@
 import {combineReducers} from 'redux';
 
-import todayExchange from './fetchTodayReducer';
-import periodExchange from './fetchPeriodReducer';
+import toolbar from './toolbarReducer';
 import arrayOfDates from './dateRangeReducer';
 import arrayOfCurrencies from './currenciesReducer';
+import periodExchange from './fetchPeriodReducer';
+import todayExchange from './fetchTodayReducer';
 import arrayOfRestCountries from './restCountriesReducer';
-import modalCountriesInfo from './modalCountriesInfoReducer';
+import modalCountriesInfo from './countriesInfoReducer';
 import stocksData from './setStocksDataReducer';
 
 export default combineReducers({ 
-    todayExchange: todayExchange,
-    periodExchange: periodExchange,
-    arrayOfDates: arrayOfDates,
-    arrayOfCurrencies: arrayOfCurrencies,
-    arrayOfRestCountries: arrayOfRestCountries,
-    modalCountriesInfo: modalCountriesInfo,
-    stocksData: stocksData,
+    toolbar,
+    arrayOfDates,
+    arrayOfCurrencies,
+    periodExchange,
+    todayExchange,
+    arrayOfRestCountries,
+    modalCountriesInfo,
+    stocksData,
 });

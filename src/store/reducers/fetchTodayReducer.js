@@ -2,12 +2,12 @@ import {SET_TODAY_DATA, SORT_TABLE} from '../constants';
 
 const initState = [];
 
-const reducer = (state = initState, action) => {
-    switch (action.type) {
+const reducer = (state = initState, {type, payload}) => {
+    switch (type) {
         case SET_TODAY_DATA: 
-            return state = [...action.payload];
+            return [...payload];
         case SORT_TABLE: 
-            return [...action.payload];
+            return [...payload];
         default:
             return [...state];
     }

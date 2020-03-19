@@ -17,11 +17,7 @@ const ChartComponent = ({period}) => {
         });
     })
 
-    return (
-        <div className = "toolbar-element chartElement hidden">
-            <canvas className = "chartLine" id="newChart" width="200" height="150"></canvas>
-        </div>
-    )
+    return <canvas className = "chartLine" id="newChart" width="200" height="150"></canvas>
 }
 
 const mapStateToProps = (state) => ({

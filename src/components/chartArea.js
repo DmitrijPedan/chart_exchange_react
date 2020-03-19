@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import ButtonDefault from './buttons/default';
-import Modale from './modale';
+import ChartInitialData from './chartInitialData';
 import ChartComponent from './chartComponent';
 
 const ChartArea = () => {
@@ -8,9 +8,9 @@ const ChartArea = () => {
     const [modalStatus, setModalStatus] = useState(false);
    
     return (
-        <div className = "toolbar-element chartElement hidden">
+        <div className = "toolbar-element chartElement">
             <ButtonDefault action = {() => setModalStatus(!modalStatus)} inner = {'Исходные данные'}/>
-            {modalStatus && <Modale  action = {() => setModalStatus(!modalStatus)} /> }
+            {modalStatus && <ChartInitialData  action = {() => setModalStatus(!modalStatus)} /> }
             <ChartComponent />
         </div>
     )

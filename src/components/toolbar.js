@@ -1,27 +1,23 @@
 import React from 'react';
-import {switchDisplay} from '../services/switchDisplay';
+import {connect} from 'react-redux';
+import {showChart, showTable, showStocks} from '../store/actions/toolbarActions';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faChartLine, faTable, faChartArea} from '@fortawesome/free-solid-svg-icons';
 import '../styles/toolbar.css';
 
-const Toolbar = () => {
-
-    const onClickHandler = (targ) => {
-        const id = Boolean(targ.id) ? targ.id : targ.parentNode.id
-        switchDisplay(id); 
-    }
+const Toolbar = ({showChart, showTable, showStocks}) => {
 
     return (
         <div className = "toolbar">
-            <button id = "chartElement" onClick = {(e) => onClickHandler(e.target)}>
+            <button onClick = {showChart}>
                 <FontAwesomeIcon icon= {faChartLine}/> 
                 <p>chart</p>
             </button>
-            <button id = "tableElement" onClick = {(e) => onClickHandler(e.target)}>
+            <button onClick = {showTable}>
                 <FontAwesomeIcon icon={faTable} />
                 <p>table</p>
             </button>
-            <button id = "stockElement" onClick = {(e) => onClickHandler(e.target)}>
+            <button onClick = {showStocks}>
                 <FontAwesomeIcon icon={faChartArea} />
                 <p>stock</p>
             </button>
@@ -29,4 +25,10 @@ const Toolbar = () => {
     )
 }
 
-export default Toolbar;
+const mapDispatchToProps = (dispatch) => ({
+    showChart: () => dispatch(showChart()),
+    showTable: () => dispatch(showTable()),
+    showStocks: () => dispatch(showStocks()),
+});
+
+export default connect(null, mapDispatchToProps)(Toolbar);

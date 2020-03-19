@@ -2,10 +2,10 @@ import {SET_EXCHANGE_DATA} from '../constants';
 
 const initState = [];
 
-const reducer = (state = initState, action) => {
-    switch (action.type) {
+const reducer = (state = initState, {type, payload}) => {
+    switch (type) {
         case SET_EXCHANGE_DATA:            
-            return state = [...action.payload];
+            return [...payload];
         default:
             return [...state];
     }

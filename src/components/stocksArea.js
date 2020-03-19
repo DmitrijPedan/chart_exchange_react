@@ -1,20 +1,24 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {connect} from 'react-redux';
+import {actionSetStocksData} from '../store/actions/setStocksDataAction';
+import {URL_WS_STOCKS} from '../config/urlConstants';
 
 
-const StocksArea = ({stocks}) => {
+const StocksArea = ({setStocksData}) => {
     
-    // console.log(stocks);
+    useEffect(() => {
+        const wss = new WebSocket(URL_WS_STOCKS);
+        wss.onmessage = event => setStocksData(JSON.parse(event.data));
+    })
 
     return (
-        <div className = "toolbar-element stockElement hidden">
-            <div>StockArea</div>
-        </div>
+        <div>StockArea</div>
     )
 }
 
-const mapStateToProps = (state) => ({
-    stocks: state.stocksData,
+const mapDispatchToProps = () => dispatch => ({
+    setStocksData: (ws) => dispatch(actionSetStocksData(ws))
 })
 
-export default connect(mapStateToProps)(StocksArea);
+export default connect(null, mapDispatchToProps)(StocksArea);
+

@@ -2,7 +2,7 @@ import {SET_REST_COUNTRIES} from '../constants';
 
 const initState = [];
 
-const arrayOfRestCountries = (state = initState, {type, payload}) => {
+const reducer = (state = initState, {type, payload}) => {
     switch (type) {
         case SET_REST_COUNTRIES:
             return [...payload];
@@ -11,4 +11,4 @@ const arrayOfRestCountries = (state = initState, {type, payload}) => {
     }
 }
 
-export default arrayOfRestCountries;
+export default reducer;

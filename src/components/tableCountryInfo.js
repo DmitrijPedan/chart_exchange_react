@@ -1,11 +1,12 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {setDisplayCountriesInfo} from '../store/actions/setDisplayCountriesInfoAction';
+import {setVisibilityCountriesInfo} from '../store/actions/countryInfoActions';
 import CloseButton from './buttons/close';
 import ButtonConfirm from './buttons/confirm';
 import '../styles/modale.css';
+import '../styles/countriesInfo.css';
 
-const ModalCountyInfo = ({display, data, switchDisplayModal}) => {
+const CountyInfo = ({display, data, switchDisplayModal}) => {
     if (display) {
         return (
             <div className = "modal-overlay" >
@@ -41,7 +42,7 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-    switchDisplayModal: () => dispatch(setDisplayCountriesInfo()),
+    switchDisplayModal: () => dispatch(setVisibilityCountriesInfo()),
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(ModalCountyInfo);
+export default connect(mapStateToProps, mapDispatchToProps)(CountyInfo);

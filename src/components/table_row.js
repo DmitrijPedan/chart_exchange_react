@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {setDataCountriesInfo} from '../store/actions/setDataCountriesInfoAction';
+import {setCountriesInfoData} from '../store/actions/countryInfoActions';
 
 const TableRow = ({row, setDataForModal}) => {
 
@@ -26,7 +26,7 @@ const TableRow = ({row, setDataForModal}) => {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-    setDataForModal: (data) => dispatch(setDataCountriesInfo(data)),
+    setDataForModal: (data) => dispatch(setCountriesInfoData(data)),
 })
 
 

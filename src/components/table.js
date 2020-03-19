@@ -27,7 +27,7 @@ const Table = ({today, actionSortDataHandler}) => {
                 </tr>
             </thead>
             <tbody>
-                {today.map((el, i) => <TableRow key = {i} row = {el}/>)}
+                {today.map((el, i) => <TableRow key = {`table-row-${i}`} row = {el}/>)}
             </tbody>
         </table>       
     )
