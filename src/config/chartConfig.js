@@ -1,7 +1,4 @@
 export const chartOptions = {
-    tooltips: {
-        mode: 'nearest'
-    },
     scales: {
         yAxes: [{
             ticks: {

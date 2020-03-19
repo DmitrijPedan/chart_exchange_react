@@ -1,5 +1,5 @@
 import {store} from '../store/createStore';
-import { URL_NBU_DATES } from '../config/urlConstants';
+import {URL_NBU_DATES} from '../config/urlConstants';
 import moment from 'moment';
 
 

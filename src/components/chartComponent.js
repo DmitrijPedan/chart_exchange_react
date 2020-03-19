@@ -6,13 +6,13 @@ import {getChartData} from '../services/getChartData';
 import '../styles/chart.css';
 
 
-const ChartComponent = ({period}) => {
+const ChartComponent = ({period, dates, currencies}) => {
     
-    useEffect(()=> {
+    useEffect(()=> {        
         const ctx = document.getElementById('newChart').getContext('2d');
         new Chart(ctx, {
             type: 'line',
-            data: getChartData(period),
+            data: getChartData(period, dates, currencies),
             options: chartOptions,
         });
     })
@@ -22,6 +22,8 @@ const ChartComponent = ({period}) => {
 
 const mapStateToProps = (state) => ({
     period: state.periodExchange,
+    dates: state.arrayOfDates,
+    currencies: state.arrayOfCurrencies
 })
 
 export default connect(mapStateToProps)(ChartComponent);
