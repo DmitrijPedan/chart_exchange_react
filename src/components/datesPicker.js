@@ -5,8 +5,9 @@ import {actionSetCurrencies} from '../store/actions/setCurrenciesAction';
 import {actionSetExchangeData} from '../store/actions/fetchPeriodAction';
 import DayPicker, {DateUtils} from 'react-day-picker';
 import {MONTHS, WEEKDAYS_LONG, WEEKDAYS_SHORT, DISABLED_DAYS} from '../config/datePickerConfig';
-import "react-day-picker/lib/style.css";
+
 import '../styles/datePicker.css';
+import "react-day-picker/lib/style.css";
 
 const DatesPicker = (props) => {
     

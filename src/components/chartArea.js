@@ -5,10 +5,10 @@ import ChartComponent from './chartComponent';
 
 const ChartArea = () => {
 
-    const [modalStatus, setModalStatus] = useState(false);
+    const [modalStatus, setModalStatus] = useState(true);
    
     return (
-        <div className = "toolbar-element chartElement">
+        <div>
             <ButtonDefault action = {() => setModalStatus(!modalStatus)} inner = {'Исходные данные'}/>
             {modalStatus && <ChartInitialData  action = {() => setModalStatus(!modalStatus)} /> }
             <ChartComponent />

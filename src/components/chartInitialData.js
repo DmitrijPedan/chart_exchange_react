@@ -1,4 +1,4 @@
-import React  from 'react';
+import React from 'react';
 import CloseButton from './buttons/close';
 import CodesCheckbox from './codesCheckbox';
 import DatesPicker from './datesPicker';
