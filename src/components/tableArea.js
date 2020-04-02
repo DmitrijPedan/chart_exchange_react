@@ -9,8 +9,7 @@ import Table from './table';
 const TableArea = ({fetchCountriesData, fetchTodayData}) => {
 
     useEffect(() => {
-        const fetchCountries = async () => fetchCountriesData(await fetchRestCountries());
-        fetchCountries();
+        (async () => fetchCountriesData(await fetchRestCountries()))();
         fetchTodayData();
     })
 

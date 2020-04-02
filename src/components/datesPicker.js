@@ -12,21 +12,12 @@ const DatesPicker = (props) => {
     
     const checkboxesArray = [...document.getElementsByClassName('codecheck')];
 
-    const initState = {
-        from: undefined,
-        to: undefined,
-    }
+    const initState = {from: undefined, to: undefined};
     
-    const [state, setState] = useState(initState)
-    const { from, to } = state;
-    const modifiers = { start: from, end: to };
+    const [state, setState] = useState(initState);
+    const {from, to} = state;
        
-    const handleDayClick = (day) => {
-        const range = DateUtils.addDayToRange(day, state);
-        setState(range);
-    }
-
-    const handleConfirmClick = () => {
+    const confirmHandleClick = () => {
         props.actionSetCurrenciesHandler(checkboxesArray.map(el => el.checked && el.value).filter(el => el));
         props.actionSetDatesRangeHandler(state);
         props.actionSetExchangeHandler();
@@ -39,14 +30,13 @@ const DatesPicker = (props) => {
                 {!from && !to && `Начальная дата`}
                 {from && !to && `Конечная дата`}
                 {from && to && `Выбрано с ${from.toLocaleDateString()} по ${to.toLocaleDateString()}`}
-                
             </p>
             <DayPicker
                 className="Selectable"
                 numberOfMonths = {1}
                 selectedDays = {[from, { from, to }]}
-                modifiers = {modifiers}
-                onDayClick = {handleDayClick}
+                modifiers = {{ start: from, end: to }}
+                onDayClick = {(day) => setState(DateUtils.addDayToRange(day, state))}
                 months={MONTHS}
                 weekdaysLong={WEEKDAYS_LONG}
                 weekdaysShort={WEEKDAYS_SHORT}
@@ -60,9 +50,9 @@ const DatesPicker = (props) => {
                     Сбросить
                 </button>
                <button className="link" 
-                    onClick={handleConfirmClick}
+                    onClick={confirmHandleClick}
                     disabled = {from && to ? "" : "disabled"} >
-                   Применить
+                    Применить
                </button>
             </div>
         </div>

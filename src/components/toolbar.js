@@ -1,12 +1,11 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {showChart, showTable, showStocks} from '../store/actions/toolbarActions';
+import {showChart, showTable} from '../store/actions/toolbarActions';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faChartLine, faTable, faChartArea} from '@fortawesome/free-solid-svg-icons';
+import {faChartLine, faTable} from '@fortawesome/free-solid-svg-icons';
 import '../styles/toolbar.css';
 
-const Toolbar = ({showChart, showTable, showStocks}) => {
-
+const Toolbar = ({showChart, showTable}) => {
     return (
         <div className = "toolbar">
             <button onClick = {showChart}>
@@ -17,10 +16,6 @@ const Toolbar = ({showChart, showTable, showStocks}) => {
                 <FontAwesomeIcon icon={faTable} />
                 <p>table</p>
             </button>
-            <button onClick = {showStocks}>
-                <FontAwesomeIcon icon={faChartArea} />
-                <p>stock</p>
-            </button>
         </div>
     )
 }
@@ -28,7 +23,6 @@ const Toolbar = ({showChart, showTable, showStocks}) => {
 const mapDispatchToProps = (dispatch) => ({
     showChart: () => dispatch(showChart()),
     showTable: () => dispatch(showTable()),
-    showStocks: () => dispatch(showStocks()),
 });
 
 export default connect(null, mapDispatchToProps)(Toolbar);

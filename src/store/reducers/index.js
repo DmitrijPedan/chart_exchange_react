@@ -7,7 +7,6 @@ import periodExchange from './fetchPeriodReducer';
 import todayExchange from './fetchTodayReducer';
 import arrayOfRestCountries from './restCountriesReducer';
 import modalCountriesInfo from './countriesInfoReducer';
-import stocksData from './setStocksDataReducer';
 
 export default combineReducers({ 
     toolbar,
@@ -17,5 +16,4 @@ export default combineReducers({
     todayExchange,
     arrayOfRestCountries,
     modalCountriesInfo,
-    stocksData,
 });

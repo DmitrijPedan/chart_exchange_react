@@ -5,10 +5,9 @@ import {chartOptions} from '../config/chartConfig';
 import {getChartData} from '../services/getChartData';
 import '../styles/chart.css';
 
-
 const ChartComponent = ({period, dates, currencies}) => {
-    
-    useEffect(()=> {        
+
+    useEffect(() => {                   
         const ctx = document.getElementById('newChart').getContext('2d');
         new Chart(ctx, {
             type: 'line',
@@ -17,7 +16,11 @@ const ChartComponent = ({period, dates, currencies}) => {
         });
     })
 
-    return <canvas className = "chartLine" id="newChart" width="200" height="150"></canvas>
+    return (
+        <div>
+            <canvas className = "chartLine" id="newChart" width="200" height="150"></canvas>
+        </div>
+    ) 
 }
 
 const mapStateToProps = (state) => ({

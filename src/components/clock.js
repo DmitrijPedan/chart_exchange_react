@@ -1,9 +1,12 @@
 import React, {useState} from 'react';
 
 const Clock = () => {
-    const [tick, setTick] = useState(new Date().toLocaleTimeString())
-    const ticked = () => setTick(new Date().toLocaleTimeString())
-    setInterval(ticked, 1000)
+
+    const options = {hour: 'numeric', minute: 'numeric'};
+    
+    const [tick, setTick] = useState(new Date().toLocaleTimeString("ru", options));
+    
+    setInterval(() => setTick(new Date().toLocaleTimeString("ru", options)), 60000)
     
     return (
         <div>
